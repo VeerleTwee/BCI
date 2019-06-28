@@ -5,7 +5,7 @@ clearvars;
 
 %% Recording settings
 sec = 4;     % Recording time for each stimulus in sec.
-runs = 10;   % Number of runs through full calibration
+runs = 20;   % Number of runs through full calibration
 
 
 %% Connect to the buffer
@@ -37,7 +37,7 @@ screens = Screen('Screens');                % Returns the screen numbers
 screenNumber = max(screens);                % Used to draw to the external screen (if attached)
 white = WhiteIndex(screenNumber);           % Set values for white screen
 black = BlackIndex(screenNumber);           % Set values for black screen
-bg = 0;                                     % Background color = black
+bg = [10, 200, 200];                                     % Background color = black
 % Open an on screen window using PsychImaging with the assigned background color
 [window, windowRect] = PsychImaging('OpenWindow', screenNumber, bg);
 ifi = Screen('GetFlipInterval', window);    % Refresh rate of the screen
